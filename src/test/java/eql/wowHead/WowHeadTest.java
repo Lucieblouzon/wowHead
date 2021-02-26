@@ -34,7 +34,7 @@ public class WowHeadTest {
 
 	//Instancier les navigateurs pour pouvoir les choisir en tant que propriétés dans Jenkins
 		if (BROWSER.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver2.exe");
 			driver = new ChromeDriver();			
 					}
 		else if (BROWSER.equalsIgnoreCase("firefox")) {
