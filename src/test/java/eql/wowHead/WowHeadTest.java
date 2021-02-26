@@ -37,8 +37,8 @@ public class WowHeadTest {
 			System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver2.exe");
 			driver = new ChromeDriver();			
 					}
-		else if (BROWSER.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "src/main/resources/driver/geckodriver.exe");
+		else if (BROWSER.equalsIgnoreCase("explorer")) {
+			System.setProperty("webdriver.IE.driver", "src/main/resources/driver/IEDriverServer.exe");
 			driver = new FirefoxDriver();
 	
 	}}
