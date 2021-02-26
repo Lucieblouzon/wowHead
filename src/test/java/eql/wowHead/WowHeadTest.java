@@ -14,6 +14,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -23,12 +24,24 @@ public class WowHeadTest {
 	
 	WebDriver driver;
 	
+	private String browser1 = "chrome"; 
+	private String browser2 = "firefox"; 
+	
 	@Before
-
+	
 	public void setup() {
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver2.exe");
-		driver = new ChromeDriver();
-	}
+		
+
+	//Instancier les navigateurs pour pouvoir les choisir en tant que propriétés dans Jenkins
+		if (browser1.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver2.exe");
+			driver = new ChromeDriver();			
+					}
+		else if (browser2.equalsIgnoreCase("firefox")) {
+			System.setProperty("webdriver.gecko.driver", "src/main/resources/driver/geckodriver.exe");
+			driver = new FirefoxDriver();
+	
+	}}
 
 	@After
 	
@@ -36,6 +49,8 @@ public class WowHeadTest {
 	driver.quit();
 		
 	}
+	
+	
 	
 	@Test
 		
