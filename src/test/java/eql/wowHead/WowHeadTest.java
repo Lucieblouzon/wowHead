@@ -24,8 +24,8 @@ public class WowHeadTest {
 	
 	WebDriver driver;
 	
-	private String browser1 = "chrome"; 
-	private String browser2 = "firefox"; 
+	private String BROWSER = System.getProperty("browser");
+
 	
 	@Before
 	
@@ -33,11 +33,11 @@ public class WowHeadTest {
 		
 
 	//Instancier les navigateurs pour pouvoir les choisir en tant que propriétés dans Jenkins
-		if (browser1.equalsIgnoreCase("chrome")) {
+		if (BROWSER.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver2.exe");
 			driver = new ChromeDriver();			
 					}
-		else if (browser2.equalsIgnoreCase("firefox")) {
+		else if (BROWSER.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "src/main/resources/driver/geckodriver.exe");
 			driver = new FirefoxDriver();
 	
