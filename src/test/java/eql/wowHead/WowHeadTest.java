@@ -55,7 +55,11 @@ public class WowHeadTest {
 	@Test
 		
 	public void testLardeur () {
+		
+		WebDriverWait wait = new WebDriverWait(driver, 10); 
+		
 		driver.get("https://fr.wowhead.com/");
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='onetrust-accept-btn-handler']")));
 		
 		//accepter les cookies
 		driver.findElement(By.xpath("//*[@id='onetrust-accept-btn-handler']")).click();
@@ -73,7 +77,7 @@ public class WowHeadTest {
 		System.out.println("La recherche LARDEUR a été lancée");
 		
 		//Attendre le chargement de la page
-		WebDriverWait wait = new WebDriverWait(driver, 10); 
+		
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@class='listview-cleartext'][@href='/npc=46254/lardeur']")));
 		
 		//Vérifier qu'on est bien sur la page "Lardeur"
